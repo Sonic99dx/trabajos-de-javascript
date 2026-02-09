@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadro de texto y extracción de datos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20pcen;
+            background-color: blue;
+            border: 0 solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 300px;
+            padding: 8px;
+            margin-top: 5px;
+            border:0mm;
+        }
+        button {
+            margin-top: 15px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formulario de ejemplo</h2>
+
+    <label for="nota">Nota:</label>
+    <input type="text" id="nota" placeholder="Escribe tu nota">
+    <label for="nota2">Nota 2:</label>
+    <input type="text" id="nota2" placeholder="Escribe tu segunda nota">
+    <label for="nota3">Nota 3:</label>
+    <input type="text" id="nota3" placeholder="Escribe tu tercera nota">
+
+    <br>
+    <button onclick="extraerDatos()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function extraerDatos() {
+            const nota = document.getElementById("nota").value.trim();
+            const nota2 = document.getElementById("nota2").value.trim();
+            const nota3 = document.getElementById("nota3").value.trim();
+
+            if (!nota || !nota2 || !nota3) {
+                document.getElementById("resultado").textContent = "Por favor, completa todos los campos.";
+                document.getElementById("resultado").style.color = "red";
+                return;
+            }
+
+            document.getElementById("resultado").style.color = "green";
+            document.getElementById("resultado").textContent = 
+                `Nota: ${nota} | Nota 2: ${nota2}`;
+        }
+    </script>
+
+</body>
+</html>
