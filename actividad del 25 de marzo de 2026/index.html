@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Productos</h1>
+        
+        <!-- Formulario -->
+        <form id="productForm" class="product-form">
+            <div class="form-group">
+                <label for="id_producto">ID Producto:</label>
+                <input type="text" id="id_producto" name="id_producto" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre del producto:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="precio">Precio (COP):</label>
+                <input type="number" id="precio" name="precio" step="0.01" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="">Seleccione una categoría</option>
+                    <option value="Tecnología">Tecnología</option>
+                    <option value="Hogar">Hogar</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Vehiculo">Vehiculo</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn-guardar">Guardar Producto</button>
+        </form>
+        
+        <div class="productos-lista">
+            <h2>Productos Registrados</h2>
+            <div id="mensajeError" class="error-message"></div>
+            <table id="tablaProductos" class="productos-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio (COP)</th>
+                        <th>Categoría</th>
+                    </tr>
+                </thead>
+                <tbody id="productosBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
